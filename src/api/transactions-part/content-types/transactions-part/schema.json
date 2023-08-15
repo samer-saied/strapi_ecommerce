@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions_parts",
+  "info": {
+    "singularName": "transactions-part",
+    "pluralName": "transactions-parts",
+    "displayName": "transactionPart",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "product": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::product.product"
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "p_price": {
+      "type": "decimal"
+    },
+    "size": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "singularName": "transaction",
+    "pluralName": "transactions",
+    "displayName": "transaction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "createdDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Preparing",
+        "Order Placed",
+        "Shipping",
+        "Delivered"
+      ],
+      "default": "Preparing"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "transactions_parts": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::transactions-part.transactions-part"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "delivery": {
+      "type": "decimal"
+    },
+    "tax": {
+      "type": "decimal"
+    },
+    "netTotal": {
+      "type": "decimal"
+    }
+  }
+}
